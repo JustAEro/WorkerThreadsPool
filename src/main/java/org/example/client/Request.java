@@ -1,7 +1,8 @@
-package org.example;
+package org.example.client;
+
+import org.example.MathFunction;
 
 import java.io.Serializable;
-import java.net.Socket;
 
 public class Request implements Serializable {
     private final double processingTimeInSeconds;
@@ -48,10 +49,4 @@ public class Request implements Serializable {
                 "result="+result+
                 "}";
     }
-
-    //public Request(Socket clientSocket) {
-        // Parse the request parameters from the client socket
-        // ...
-
-    //}
 }

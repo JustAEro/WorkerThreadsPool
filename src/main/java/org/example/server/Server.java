@@ -1,4 +1,6 @@
-package org.example;
+package org.example.server;
+
+import org.example.client.Request;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -16,15 +18,9 @@ public class Server {
     // Create the queue to hold requests
     private static final LinkedBlockingQueue<Request> queueRequests = new LinkedBlockingQueue<>();
     private static final LinkedBlockingQueue<RequestExecutionResult> queueResults = new LinkedBlockingQueue<>();
-
-    public static LinkedBlockingQueue<Request> getQueueRequests() {
-        return queueRequests;
-    }
-
     public static LinkedBlockingQueue<RequestExecutionResult> getQueueResults() {
         return queueResults;
     }
-
     public static int getPort() {
         return port;
     }
@@ -37,6 +33,9 @@ public class Server {
         Scanner scanner = new Scanner(System.in);
         try {
             maxNumberOfWorkerThreads = scanner.nextInt();
+            if (maxNumberOfWorkerThreads <= 0) {
+                throw new RuntimeException("Number of worker threads can't be negative or zero");
+            }
         }
         catch (InputMismatchException e){
             System.out.println(e.getMessage());

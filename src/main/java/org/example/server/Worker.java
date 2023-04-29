@@ -1,18 +1,19 @@
-package org.example;
+package org.example.server;
 
-import java.io.IOException;
+import org.example.client.Request;
+
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class Worker implements Runnable {
-    LinkedBlockingQueue<Request> queue;
+    LinkedBlockingQueue<Request> queueRequests;
 
-    public Worker(LinkedBlockingQueue<Request> queue) {
-        this.queue = queue;
+    public Worker(LinkedBlockingQueue<Request> queueRequests) {
+        this.queueRequests = queueRequests;
     }
 
     public void run() {
         // Get the next request from the queue
-        Request request = queue.poll();
+        Request request = queueRequests.poll();
         // Process the request
         // ...
         assert request != null;
@@ -38,7 +39,10 @@ public class Worker implements Runnable {
         queueResults = Server.getQueueResults();
 
         queueResults.add(requestExecutionResult);
+
         System.out.println("Queue results size: " + queueResults.size());
-        System.out.println(requestExecutionResult);
+        for (RequestExecutionResult res: queueResults){
+            System.out.println(res);
+        }
     }
 }
