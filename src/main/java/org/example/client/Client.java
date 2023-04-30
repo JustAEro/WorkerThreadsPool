@@ -1,14 +1,23 @@
 package org.example.client;
 
-import org.example.server.RequestExecutionResult;
 import org.example.server.Server;
 
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class Client {
+    private static final int PORT = Server.getPort();
+    private static final String HOSTNAME = "localhost";
+
+    public static int getPORT() {
+        return PORT;
+    }
+
+    public static String getHOSTNAME() {
+        return HOSTNAME;
+    }
+
     public static void main(String[] args) {
-        int numberOfRequestGenerators = 3;
-        RequestGenerator[] requestGenerators = new RequestGenerator[numberOfRequestGenerators];
+        int countOfGenerators = 10;
+        RequestGenerator[] requestGenerators = new RequestGenerator[countOfGenerators];
         for (RequestGenerator requestGenerator: requestGenerators) {
             requestGenerator = new RequestGenerator(1);
         }

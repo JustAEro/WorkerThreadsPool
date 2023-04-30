@@ -10,7 +10,8 @@ import java.util.TimerTask;
 public class RequestGenerator {
     private final Random rand = new Random();
     private int countRes = 0;
-    private static final int MAX_COUNT_RES = 5;
+    private static final int MAX_COUNT_RES = 15;
+    private static int countTotal = 0;
 
     private Request generateRequest() {
         //generate request
@@ -41,14 +42,14 @@ public class RequestGenerator {
                 }
                 else {
                     countRes++;
+                    countTotal++;
                 }
 
                 //generate request
                 Request request = generateRequest();
 
-                System.out.println(request);
-
-                Sender.send(request); //sends request to server
+                //send request to server
+                Sender.send(request);
             }
         };
 

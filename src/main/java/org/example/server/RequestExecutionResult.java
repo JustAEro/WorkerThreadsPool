@@ -1,6 +1,8 @@
 package org.example.server;
 
-public class RequestExecutionResult {
+import java.io.Serializable;
+
+public class RequestExecutionResult implements Serializable {
     private final double executionTimeInSeconds;
     private final double result;
     public RequestExecutionResult(double executionTimeInSeconds, double result){

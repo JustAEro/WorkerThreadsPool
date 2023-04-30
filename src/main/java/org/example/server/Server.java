@@ -54,30 +54,32 @@ public class Server {
                         // Wait for a client connection
                         Socket clientSocket = serverSocket.accept();
 
+                        OutputStream outputStream = clientSocket.getOutputStream();
+                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+
                         // Create a new request object from the client connection
                         // get the input stream from the connected socket
                         InputStream inputStream = clientSocket.getInputStream();
                         // create a DataInputStream, so we can read data from it.
                         ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
                         Request request = (Request) objectInputStream.readObject();
-                        //Request request = new Request(clientSocket);
+
                         // Add the request to the queue
                         queueRequests.add(request);
                         // Submit a new worker thread to process the request
-                        executorService.submit(new Worker(queueRequests));
+                        executorService.submit(new Worker(queueRequests, objectOutputStream));
                     }
                     catch (Exception e){
-                        System.out.println(e.getMessage());
-                        break;
+                        throw new RuntimeException(e);
                     }
                 }
             }
             catch (Exception e){
-                System.out.println(e.getMessage());
+                throw new RuntimeException(e);
             }
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 }

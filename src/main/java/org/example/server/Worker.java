@@ -2,13 +2,17 @@ package org.example.server;
 
 import org.example.client.Request;
 
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class Worker implements Runnable {
     LinkedBlockingQueue<Request> queueRequests;
+    ObjectOutputStream objectOutputStream;
 
-    public Worker(LinkedBlockingQueue<Request> queueRequests) {
+    public Worker(LinkedBlockingQueue<Request> queueRequests, ObjectOutputStream objectOutputStream) {
         this.queueRequests = queueRequests;
+        this.objectOutputStream = objectOutputStream;
     }
 
     public void run() {
@@ -40,9 +44,13 @@ public class Worker implements Runnable {
 
         queueResults.add(requestExecutionResult);
 
-        System.out.println("Queue results size: " + queueResults.size());
-        for (RequestExecutionResult res: queueResults){
-            System.out.println(res);
+        System.out.println(requestExecutionResult);
+
+        try {
+            objectOutputStream.writeObject(requestExecutionResult);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
     }
 }
