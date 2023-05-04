@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d93c33fc-1ff5-4fec-a8df-50f190249206" name="Changes" comment="Added Sender">
+    <list default="true" id="d93c33fc-1ff5-4fec-a8df-50f190249206" name="Changes" comment="Added response from server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client/RequestGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client/RequestGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/RequestExecutionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server/RequestExecutionResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server/Worker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +72,9 @@
       <workItem from="1680327653750" duration="3395000" />
       <workItem from="1680337569492" duration="2388000" />
       <workItem from="1682800291099" duration="10154000" />
-      <workItem from="1682871007656" duration="4094000" />
+      <workItem from="1682871007656" duration="5006000" />
+      <workItem from="1683192618277" duration="389000" />
+      <workItem from="1683202467200" duration="2360000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1680303013863</created>
@@ -90,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682807029462</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added response from server">
+      <created>1682875152810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682875152810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +106,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Added Sender" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Sender" />
+    <MESSAGE value="Added response from server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added response from server" />
   </component>
 </project>

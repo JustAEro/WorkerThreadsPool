@@ -13,6 +13,7 @@ public class RequestGenerator {
     private static final int MAX_COUNT_RES = 15;
     private static int countTotal = 0;
 
+    private final double intervalSeconds;
     private Request generateRequest() {
         //generate request
         MathFunction[] mathFunctions = MathFunction.values();
@@ -30,7 +31,11 @@ public class RequestGenerator {
         return new Request(randomTime,randomMathFunction,randomNum1,randomNum2,result);
     }
 
-    public RequestGenerator(double intervalSeconds) {
+    public static int getCountTotal() {
+        return countTotal;
+    }
+
+    public void run() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             public void run() {
@@ -56,5 +61,9 @@ public class RequestGenerator {
         long intervalMillis = (long) (intervalSeconds * 1000);
         // Generate a new ticket with period
         timer.schedule(task, 0, intervalMillis);
+    }
+
+    public RequestGenerator(double intervalSeconds) {
+        this.intervalSeconds = intervalSeconds;
     }
 }

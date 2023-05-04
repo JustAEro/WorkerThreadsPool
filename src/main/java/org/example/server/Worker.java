@@ -21,7 +21,14 @@ public class Worker implements Runnable {
         // Process the request
         // ...
         assert request != null;
+
         long startTime = System.currentTimeMillis();
+        try {
+            Thread.sleep((long) (1000 * request.getProcessingTimeInSeconds())); //simulate actual execution time
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         double num1 = request.getNum1();
         double num2 = request.getNum2();
         double result = switch (request.getMathFunction()) {
@@ -44,7 +51,7 @@ public class Worker implements Runnable {
 
         queueResults.add(requestExecutionResult);
 
-        System.out.println(requestExecutionResult);
+        System.out.println(request + "\n" + requestExecutionResult + "\n");
 
         try {
             objectOutputStream.writeObject(requestExecutionResult);

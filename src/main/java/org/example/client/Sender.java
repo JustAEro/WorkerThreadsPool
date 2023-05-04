@@ -55,7 +55,7 @@ public class Sender {
         }
         try {
             RequestExecutionResult requestExecutionResult = (RequestExecutionResult) objectInputStream.readObject();
-            if (requestExecutionResult.getResult() != request.getResult()) {
+            if (Double.compare(requestExecutionResult.getResult(), request.getResult()) != 0) {
                 throw new RuntimeException("Error! Wrong request was processed");
             }
             System.out.println(request + "\n" + requestExecutionResult + "\n");

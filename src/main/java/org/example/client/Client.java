@@ -16,10 +16,11 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        int countOfGenerators = 10;
+        int countOfGenerators = 5;
         RequestGenerator[] requestGenerators = new RequestGenerator[countOfGenerators];
-        for (RequestGenerator requestGenerator: requestGenerators) {
-            requestGenerator = new RequestGenerator(1);
+        for (int i = 0; i < requestGenerators.length; i++) {
+            requestGenerators[i] = new RequestGenerator(1);
+            requestGenerators[i].run();
         }
     }
 }
