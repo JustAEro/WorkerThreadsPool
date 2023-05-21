@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d93c33fc-1ff5-4fec-a8df-50f190249206" name="Changes" comment="Added response from server">
+    <list default="true" id="d93c33fc-1ff5-4fec-a8df-50f190249206" name="Changes" comment="Added simulation of execution time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client/RequestGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client/RequestGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server/Worker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -74,7 +79,10 @@
       <workItem from="1682800291099" duration="10154000" />
       <workItem from="1682871007656" duration="5006000" />
       <workItem from="1683192618277" duration="389000" />
-      <workItem from="1683202467200" duration="2360000" />
+      <workItem from="1683202467200" duration="2717000" />
+      <workItem from="1683229826974" duration="5144000" />
+      <workItem from="1683723246446" duration="1262000" />
+      <workItem from="1684514407991" duration="5607000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1680303013863</created>
@@ -97,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682875152810</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added simulation of execution time">
+      <created>1683205052591</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683205052591</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +122,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Added Sender" />
     <MESSAGE value="Added response from server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added response from server" />
+    <MESSAGE value="Added simulation of execution time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added simulation of execution time" />
   </component>
 </project>

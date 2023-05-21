@@ -16,7 +16,7 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        int countOfGenerators = 5;
+        int countOfGenerators = 100;
         RequestGenerator[] requestGenerators = new RequestGenerator[countOfGenerators];
         for (int i = 0; i < requestGenerators.length; i++) {
             requestGenerators[i] = new RequestGenerator(1);

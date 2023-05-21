@@ -51,7 +51,10 @@ public class Worker implements Runnable {
 
         queueResults.add(requestExecutionResult);
 
-        System.out.println(request + "\n" + requestExecutionResult + "\n");
+        long serverWorkTime = System.currentTimeMillis() - Server.getServerStartTime();
+        System.out.println(Server.getQueueResults().size() + ")The time of work of program is now: " + serverWorkTime + " ms");
+
+        //System.out.println(Server.getQueueResults().size() + " " + request + "\n" + requestExecutionResult + "\n");
 
         try {
             objectOutputStream.writeObject(requestExecutionResult);

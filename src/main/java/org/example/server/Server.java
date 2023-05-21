@@ -15,6 +15,12 @@ public class Server {
     // Define the port on which the server listens
     private static final int port = 7777;
 
+    private static long serverStartTime;
+
+    public static long getServerStartTime() {
+        return serverStartTime;
+    }
+
     // Create the queue to hold requests
     private static final LinkedBlockingQueue<Request> queueRequests = new LinkedBlockingQueue<>();
     private static final LinkedBlockingQueue<RequestExecutionResult> queueResults = new LinkedBlockingQueue<>();
@@ -49,6 +55,7 @@ public class Server {
             // Create the executor service to handle worker threads
             try (ExecutorService executorService = Executors.newFixedThreadPool(maxNumberOfWorkerThreads)){
                 // Create the server loop
+                serverStartTime = System.currentTimeMillis();
                 while (true) {
                     try {
                         // Wait for a client connection

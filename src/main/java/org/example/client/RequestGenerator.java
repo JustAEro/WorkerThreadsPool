@@ -10,7 +10,7 @@ import java.util.TimerTask;
 public class RequestGenerator {
     private final Random rand = new Random();
     private int countRes = 0;
-    private static final int MAX_COUNT_RES = 15;
+    private static final int MAX_COUNT_RES = 10;
     private static int countTotal = 0;
 
     private final double intervalSeconds;
@@ -18,7 +18,7 @@ public class RequestGenerator {
         //generate request
         MathFunction[] mathFunctions = MathFunction.values();
         MathFunction randomMathFunction = mathFunctions[rand.nextInt(mathFunctions.length)];
-        double randomTime = rand.nextDouble();
+        double randomTime = 1.0;
         double randomNum1 = rand.nextDouble();
         double randomNum2 = rand.nextDouble();
         double result = switch (randomMathFunction) {
